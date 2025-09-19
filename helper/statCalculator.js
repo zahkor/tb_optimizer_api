@@ -166,7 +166,11 @@ class StatCalculator {
 
         if (options.gpIncludeMods) {
             for (var i = 0; i < 6; i++) {
-                equippedMods.push({ pips: maxValues.modRarity, level: maxValues.modLevel, tier: maxValues.modTier });
+                equippedMods.push({
+                    pips: maxValues.modRarity,
+                    level: maxValues.modLevel,
+                    tier: maxValues.modTier
+                });
             }
         }
 
@@ -421,7 +425,10 @@ class StatCalculator {
                         if (mod.level == 15) ++setBonuses[mod.set].maxLevel;
                     } else {
                         // new set bonus, create object
-                        setBonuses[mod.set] = { count: 1, maxLevel: mod.level == 15 ? 1 : 0 };
+                        setBonuses[mod.set] = {
+                            count: 1,
+                            maxLevel: mod.level == 15 ? 1 : 0
+                        };
                     }
                     // add Primary/Secondary stats to data
                     if (mod.stat) {
@@ -464,7 +471,10 @@ class StatCalculator {
                         if (mod.level == 15) ++setBonus.maxLevel;
                     } else {
                         // new set bonus, create object
-                        setBonuses[+mod.definitionId[0]] = { count: 1, maxLevel: mod.level == 15 ? 1 : 0 };
+                        setBonuses[+mod.definitionId[0]] = {
+                            count: 1,
+                            maxLevel: mod.level == 15 ? 1 : 0
+                        };
                     }
                     // add Primary/Secondary stats to data
                     let stat = mod.primaryStat.stat,
@@ -1060,7 +1070,9 @@ class StatCalculator {
         } else if (useValues.char.equipped && Object.prototype.toString.call(useValues.char.equipped) === '[object Array]') {
             // expecting array of gear slots
             unit.equipped = useValues.char.equipped.map((slot) => {
-                return { equipmentId: unitData[unit.defId].gearLvl[unit.gear].gear[+slot - 1] };
+                return {
+                    equipmentId: unitData[unit.defId].gearLvl[unit.gear].gear[+slot - 1]
+                };
             });
         }
 
@@ -1119,7 +1131,9 @@ class StatCalculator {
             } else if (useValues.crew.equipped && Object.prototype.toString.call(useValues.crew.equipped) === '[object Array]') {
                 // expecting array of gear slots
                 char.equipped = useValues.char.equipped.map((slot) => {
-                    return { equipmentId: unitData[charID].gearLvl[char.gear].gear[+slot - 1] };
+                    return {
+                        equipmentId: unitData[charID].gearLvl[char.gear].gear[+slot - 1]
+                    };
                 });
             } else if (useValues.crew.equipped) {
                 // expecting an integer, 1-6, for number of gear slots filled (specific gear pieces don't actually matter for ships)
@@ -1145,7 +1159,10 @@ class StatCalculator {
             if (useValues.crew.modRarity || useValues.crew.modLevel) {
                 char.mods = [];
                 for (let i = 0; i < 6; i++) {
-                    char.mods.push({ pips: useValues.crew.modRarity || 6, level: useValues.crew.modLevel || 15 });
+                    char.mods.push({
+                        pips: useValues.crew.modRarity || 6,
+                        level: useValues.crew.modLevel || 15
+                    });
                 }
             }
 
@@ -1592,4 +1609,3 @@ class StatCalculator {
  */
 }
 module.exports = StatCalculator;
-
