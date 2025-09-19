@@ -1,0 +1,17 @@
+{
+    "name": "swgoh_tb_optimizer_api",
+    "version": "1.0.0",
+    "description": "api which gets the stats of a guild and returns informations to complete tb_optimizer datasheet",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "axios": "^1.12.2",
+        "express": "^5.1.0",
+        "prettier": "^3.6.2"
+    }
+}
