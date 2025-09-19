@@ -27,7 +27,18 @@ const getGalacticPowerStats = async (request, response) => {
     }
 };
 
+const getGuildNameById = async (request, response) => {
+    try {
+        const guildId = request.params.id;
+        const guild = await guildService.getGuildById(guildId);
+        response.send(guild.profile.name);
+    } catch (err) {
+        reponse.status(500).json({ error: err.message });
+    }
+};
+
 module.exports = {
     getGuildById,
-    getGalacticPowerStats
+    getGalacticPowerStats,
+    getGuildNameById
 };
