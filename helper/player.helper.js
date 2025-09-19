@@ -10,4 +10,3 @@ async function getPlayersFromGuildId(guildId) {
 module.exports = {
     getPlayersFromGuildId
 };
-

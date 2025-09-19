@@ -9,6 +9,8 @@ router.get('/:id', guildController.getGuildById);
 // GET /guild/:id/stats
 router.get('/:id/galacticpower', guildController.getGalacticPowerStats);
 
+router.get('/:id/name', guildController.getGuildNameById);
+
 router.use('/:id/members', memberRoutes);
 
 module.exports = router;
