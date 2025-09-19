@@ -29,3 +29,13 @@ To change the port, open the index.js and change it on this line :
 `
 
 # How to contribute
+
+Anyone is welcomed to contribute, just go back to the node starting step, create a new branch from the main branch, add your code, commit and push.
+Every branch before being merged to the main will be reviewed on github, under the pullrequest tab.
+
+Before creating a Pull Request, please run prettier to format the code, in order to have some standards on the project:
+`npx prettier --write .`
+at the root of the project
+
+If you need help to decide what to do, feel free to send a message, I have some ideas for the future.
+
